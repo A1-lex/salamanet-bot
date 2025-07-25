@@ -11,10 +11,10 @@
 
 from transformers import pipeline
 
-classifier = pipeline("zero-shot-classification", model="facebook/xlm-roberta-base")
+classifier = pipeline("zero-shot-classification", model="MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli")
 
 def predict_label(text):
-    labels = ["phishing", "safe", "spam", "fraud", "scam"]
+    labels = ["phishing", "safe", "scam", "spam", "fraud"]
     result = classifier(text, candidate_labels=labels, multi_label=True)
     best_label = result['labels'][0]
     best_score = result['scores'][0]
