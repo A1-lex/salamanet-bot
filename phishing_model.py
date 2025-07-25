@@ -11,7 +11,13 @@
 
 from transformers import pipeline
 
-classifier = pipeline("zero-shot-classification", model="MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli")
+classifier = pipeline(
+    "zero-shot-classification",
+    model="MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    tokenizer="MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    truncation=True,
+    max_length=256
+)
 
 def predict_label(text):
     labels = ["phishing", "safe", "scam", "spam", "fraud"]
