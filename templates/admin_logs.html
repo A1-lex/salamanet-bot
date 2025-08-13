@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Logs - Admin</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+
+    <h1>SalamaNet AI – Feedback Log Viewer</h1>
+
+    <form action="/admin/retrain" method="post" style="margin-bottom: 20px;">
+        <button type="submit">🔄 Retrain Model Now</button>
+    </form>
+
+    <h2>📊 Stats for version: {{ version if version else 'all' }}</h2>
+    <ul>
+        <li>✅ Correct: {{ correct }}</li>
+        <li>❌ Incorrect: {{ incorrect }}</li>
+        <li>🎯 Accuracy: {{ accuracy | round(2) }}%</li>
+    </ul>
+
+    <form method="get" action="/admin/logs">
+        <label for="version">Filter by model version:</label>
+        <input type="text" id="version" name="model_version" value="{{ selected_version if selected_version else '' }}" placeholder="e.g. sklearn-v1">
+        <button type="submit">Filter</button>
+        {% if selected_version %}
+            <a href="/admin/logs">(Clear)</a>
+        {% endif %}
+    </form>
+
+    <table>
+        <tr>
+            <th>Message</th>
+            <th>Predicted Label</th>
+            <th>User Feedback</th>
+            <th>Model Version</th>
+        </tr>
+        {% for row in logs %}
+        <tr>
+            <td>{{ row.message }}</td>
+            <td>{{ row.label }}</td>
+            <td>{{ row.feedback }}</td>
+            <td>{{ row.model_version }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

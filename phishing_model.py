@@ -1,27 +1,35 @@
-# from transformers import pipeline
+import joblib
+from datetime import datetime
+import csv
 
-# # Load the multilingual phishing detection model
-# classifier = pipeline("text-classification", model="mrm8488/bert-tiny-finetuned-sms-spam-detection")
+# Load version from file
+with open("model_version.txt", "r") as f:
+    MODEL_VERSION = f.read().strip()
 
-# def predict_label(text):
-#     result = classifier(text)[0]
-#     label = result['label']
-#     score = result['score']
-#     return label, score
-
-from transformers import pipeline
-
-classifier = pipeline(
-    "zero-shot-classification",
-    model="MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
-    tokenizer="MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
-    truncation=True,
-    max_length=256
-)
+# Load vectorizer and classifier
+vectorizer = joblib.load("model_sklearn/vectorizer.joblib")
+clf = joblib.load("model_sklearn/classifier.joblib")
 
 def predict_label(text):
-    labels = ["phishing", "safe", "scam", "spam", "fraud"]
-    result = classifier(text, candidate_labels=labels, multi_label=True)
-    best_label = result['labels'][0]
-    best_score = result['scores'][0]
-    return best_label, best_score
+    X = vectorizer.transform([text])
+    pred = clf.predict(X)[0]
+    proba = clf.predict_proba(X)[0][pred]
+    label = "phishing" if pred == 1 else "safe"
+
+    # Log prediction automatically
+    log_prediction(text, label, proba, MODEL_VERSION)
+
+    return label, proba, MODEL_VERSION
+
+
+def log_prediction(message, label, confidence, model_version):
+    """Append predictions to predictions_log.csv for analytics."""
+    with open("predictions_log.csv", "a", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            message,
+            label,
+            f"{confidence:.4f}",
+            model_version
+        ])

@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head><title>SalamaBot AI</title></head>
+<head>
+    <title>SalamaBot AI</title>
+</head>
 <body>
     <h1>Test Your Message</h1>
+
     <form method="POST">
         <textarea name="message" rows="5" cols="50" placeholder="Paste suspicious text here..."></textarea><br>
         <button type="submit">Analyze</button>
     </form>
+
     {% if result %}
         <h2>Result: {{ result }}</h2>
+
+        <form method="POST">
+        <input type="hidden" name="message" value="{{ message }}">
+        <input type="hidden" name="label" value="{{ label }}">
+        <input type="hidden" name="model_version" value="{{ model_version }}">
+        <button type="submit" name="feedback" value="correct">👍 Correct</button>
+        <button type="submit" name="feedback" value="incorrect">👎 Incorrect</button>
+        </form>
+
     {% endif %}
 </body>
 </html>

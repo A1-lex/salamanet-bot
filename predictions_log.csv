@@ -1,0 +1,58 @@
+2025-08-10 22:49:55,you've won! click here for your prize,phishing,0.7251,sklearn-v1
+"you've won! click here for your prize","phishing",0.7251000000000001,"sklearn-v1","2025-08-10 22:49:55"
+2025-08-10 22:50:11,"Hi Alex, your project has been approved",phishing,0.5459,sklearn-v1
+"Hi Alex, your project has been approved","phishing",0.5459,"sklearn-v1","2025-08-10 22:50:11"
+2025-08-10 22:50:27,Umeshinda pesa kutoka Airtel,phishing,0.7290,sklearn-v1
+"Umeshinda pesa kutoka Airtel","phishing",0.7290000000000001,"sklearn-v1","2025-08-10 22:50:27"
+2025-08-10 22:50:45,Your PayPal account has been limited,phishing,0.6104,sklearn-v1
+"Your PayPal account has been limited","phishing",0.6103999999999999,"sklearn-v1","2025-08-10 22:50:45"
+2025-08-10 22:55:46,hello are you hungry?,phishing,0.6879,sklearn-v1
+"hello are you hungry?","phishing","0.6879","sklearn-v1","2025-08-10 22:55:46"
+2025-08-10 22:59:08,you've won! click here for your prize,phishing,0.7251,sklearn-v1
+"you've won! click here for your prize","phishing","0.7251","sklearn-v1","2025-08-10 22:59:08"
+2025-08-12 09:31:10,you've won! click here for your prize,phishing,0.7251,sklearn-v2
+"you've won! click here for your prize","phishing","0.7251","sklearn-v2","2025-08-12 09:31:10"
+2025-08-12 09:31:37,"Hi Alex, your project has been approved",phishing,0.5459,sklearn-v2
+"Hi Alex, your project has been approved","phishing","0.5459","sklearn-v2","2025-08-12 09:31:37"
+2025-08-12 09:32:18,Umeshinda pesa kutoka Airtel,phishing,0.7290,sklearn-v2
+"Umeshinda pesa kutoka Airtel","phishing","0.729","sklearn-v2","2025-08-12 09:32:18"
+2025-08-12 09:32:37,Lunch at 1pm?,phishing,0.6723,sklearn-v2
+"Lunch at 1pm?","phishing","0.6723","sklearn-v2","2025-08-12 09:32:37"
+2025-08-12 09:36:30,"Hi Alex, your project has been approved",phishing,0.5459,sklearn-v2
+"Hi Alex, your project has been approved","phishing","0.5459","sklearn-v2","2025-08-12 09:36:30"
+2025-08-12 09:36:37,"Hi Alex, your project has been approved",phishing,0.5459,sklearn-v2
+"Hi Alex, your project has been approved","phishing","0.5459","sklearn-v2","2025-08-12 09:36:37"
+2025-08-12 09:37:45,"Hi Alex, your project has been approved",safe,0.5955,sklearn-v3
+"Hi Alex, your project has been approved","safe","0.5955","sklearn-v3","2025-08-12 09:37:45"
+2025-08-12 09:43:44,"Hi Alex, your project has been approved",safe,0.5955,sklearn-v1
+"Hi Alex, your project has been approved","safe","0.5955","sklearn-v1","2025-08-12 09:43:44"
+2025-08-12 09:44:06,"Hi Alex, your project has been approved",safe,0.5955,sklearn-v1
+"Hi Alex, your project has been approved","safe","0.5955","sklearn-v1","2025-08-12 09:44:06"
+2025-08-12 09:44:27,you've won a free prize,phishing,0.5645,sklearn-v1
+"you've won a free prize","phishing","0.5645","sklearn-v1","2025-08-12 09:44:27"
+2025-08-12 09:44:55,Lunch at 1pm?,safe,0.5991,sklearn-v1
+"Lunch at 1pm?","safe","0.5991","sklearn-v1","2025-08-12 09:44:55"
+2025-08-12 09:45:19,Your PayPal account is suspended,safe,0.5016,sklearn-v1
+"Your PayPal account is suspended","safe","0.5016","sklearn-v1","2025-08-12 09:45:19"
+2025-08-12 09:45:46,"Hi Alex, see you at the meeting",safe,0.5464,sklearn-v1
+"Hi Alex, see you at the meeting","safe","0.5464","sklearn-v1","2025-08-12 09:45:46"
+2025-08-13 09:23:16,you've won a free prize,phishing,0.5645,sklearn-v1
+"you've won a free prize","phishing","0.5645","sklearn-v1","2025-08-13 09:23:16"
+2025-08-13 09:23:39,Lunch at 1pm?,safe,0.5991,sklearn-v1
+"Lunch at 1pm?","safe","0.5991","sklearn-v1","2025-08-13 09:23:39"
+2025-08-13 09:24:05,Your PayPal account is suspended,safe,0.5016,sklearn-v1
+"Your PayPal account is suspended","safe","0.5016","sklearn-v1","2025-08-13 09:24:05"
+2025-08-13 09:24:26,"Hi Alex, see you at the meeting",safe,0.5464,sklearn-v1
+"Hi Alex, see you at the meeting","safe","0.5464","sklearn-v1","2025-08-13 09:24:26"
+2025-08-13 09:24:58,Umeshinda pesa kutoka Airtel,phishing,0.5991,sklearn-v1
+"Umeshinda pesa kutoka Airtel","phishing","0.5991","sklearn-v1","2025-08-13 09:24:58"
+2025-08-13 09:28:52,Your PayPal account is suspended,phishing,0.7928,sklearn-v2
+"Your PayPal account is suspended","phishing","0.7928","sklearn-v2","2025-08-13 09:28:52"
+2025-08-13 09:41:31,"This is your bank, please verify your account password",phishing,0.7768,sklearn-v2
+"This is your bank, please verify your account password","phishing","0.7768","sklearn-v2","2025-08-13 09:41:31"
+2025-08-13 09:41:56,Lunch at 1 pm?,phishing,0.7227,sklearn-v2
+"Lunch at 1 pm?","phishing","0.7227","sklearn-v2","2025-08-13 09:41:56"
+2025-08-13 09:42:01,Lunch at 1 pm?,phishing,0.7227,sklearn-v2
+"Lunch at 1 pm?","phishing","0.7227","sklearn-v2","2025-08-13 09:42:01"
+2025-08-13 09:42:18,You have won a lottery! Click here,phishing,0.7578,sklearn-v2
+"You have won a lottery! Click here","phishing","0.7578","sklearn-v2","2025-08-13 09:42:18"
