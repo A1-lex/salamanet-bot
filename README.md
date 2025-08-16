@@ -65,7 +65,7 @@ salamanet_ai/
 
 🚀 Getting Started
 1. Clone & Install
-git clone https://github.com/your-username/salamanet_ai.git
+git clone https://github.com/A1-lex/salamanet-bot/edit/phase1-mvp
 cd salamanet_ai
 pip install -r requirements.txt
 
