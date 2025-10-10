@@ -65,8 +65,8 @@ salamanet_ai/
 
 🚀 Getting Started
 1. Clone & Install
-git clone https://github.com/your-username/salamanet_ai.git
-cd salamanet_ai
+git clone 
+cd salamanet-bot
 pip install -r requirements.txt
 
 2. Run the App
