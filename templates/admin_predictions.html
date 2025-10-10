@@ -12,58 +12,41 @@
 
     <h1>SalamaNet AI – Predictions Log Viewer</h1>
 
-    <form method="get" action="/admin/predictions" style="margin-bottom: 20px;">
-        <label for="version">Filter by model version:</label>
-        <input type="text" id="version" name="version" value="{{ version }}" placeholder="e.g. sklearn-v1">
-        <button type="submit">Filter</button>
-        {% if selected_version %}
-            <a href="/admin/predictions">(Clear)</a>
-        {% endif %}
-    </form>
-
-    {% if daily_summary %}
-    <h2>📊 Daily Summary</h2>
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Total Predictions</th>
-            <th>Phishing</th>
-            <th>Safe</th>
-        </tr>
-        {% for day in daily_summary %}
-        <tr>
-            <td>{{ day.date }}</td>
-            <td>{{ day.total }}</td>
-            <td>{{ day.phishing }}</td>
-            <td>{{ day.safe }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+  <form method="get" action="/admin/predictions" style="margin-bottom: 20px;">
+    <label>Model version:</label>
+    <input type="text" name="version" value="{{ version }}" placeholder="e.g. sklearn-v3">
+    <label style="margin-left:12px;">Language:</label>
+    <input type="text" name="lang" value="{{ lang }}" placeholder="e.g. sw">
+    <label style="margin-left:12px;">Backend:</label>
+    <input type="text" name="backend" value="{{ backend }}" placeholder="sklearn/transformer">
+    <button type="submit">Filter</button>
+    {% if selected_version or lang or backend %}
+    <a href="/admin/predictions">(Clear)</a>
     {% endif %}
+  </form>
 
-    {% if logs %}
-    <h2>📜 Full Predictions Log</h2>
-    <table>
-        <tr>
-            <th>Message</th>
-            <th>Predicted Label</th>
-            <th>Confidence</th>
-            <th>Model Version</th>
-            <th>Timestamp</th>
-        </tr>
-        {% for row in logs %}
-        <tr>
-            <td>{{ row.message }}</td>
-            <td>{{ row.label }}</td>
-            <td>{{ (row.confidence * 100) | round(2) }}%</td>
-            <td>{{ row.model_version }}</td>
-            <td>{{ row.timestamp }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% else %}
-        <p>No predictions found{{ ' for this version' if selected_version else '' }}.</p>
-    {% endif %}
+<table>
+  <tr>
+    <th>Message</th>
+    <th>Predicted Label</th>
+    <th>Confidence</th>
+    <th>Model Version</th>
+    <th>Timestamp</th>
+    <th>Lang</th>
+    <th>Backend</th>
+  </tr>
+  {% for row in logs %}
+  <tr>
+    <td>{{ row.message }}</td>
+    <td>{{ row.label }}</td>
+    <td>{{ (row.confidence * 100) | round(2) }}%</td>
+    <td>{{ row.model_version }}</td>
+    <td>{{ row.timestamp }}</td>
+    <td>{{ row.lang }}</td>
+    <td>{{ row.backend }}</td>
+  </tr>
+  {% endfor %}
+</table>
 
 </body>
 </html>

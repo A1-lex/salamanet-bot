@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SalamaBot AI</title>
+    <title>SalamaNet AI</title>
 </head>
 <body>
     <h1>Test Your Message</h1>
 
+    <!-- Prediction Form -->
     <form method="POST">
-        <textarea name="message" rows="5" cols="50" placeholder="Paste suspicious text here..."></textarea><br>
+        <textarea name="message" rows="5" cols="50" placeholder="Paste suspicious text here...">{{ message }}</textarea><br>
         <button type="submit">Analyze</button>
     </form>
 
     {% if result %}
         <h2>Result: {{ result }}</h2>
+        <p><strong>Label:</strong> {{ label }}</p>
+        
+        {% if confidence %}
+            <p><strong>Confidence:</strong> {{ (confidence * 100) | round(2) }}%</p>
+        {% endif %}
+        
+        <p><strong>Language Detected:</strong> {{ lang if lang else "unknown" }}</p>
+        <p><strong>Backend:</strong> {{ backend }}</p>
+        <p><strong>Model Version:</strong> {{ model_version }}</p>
 
+        <!-- Feedback Form -->
         <form method="POST">
-        <input type="hidden" name="message" value="{{ message }}">
-        <input type="hidden" name="label" value="{{ label }}">
-        <input type="hidden" name="model_version" value="{{ model_version }}">
-        <button type="submit" name="feedback" value="correct">👍 Correct</button>
-        <button type="submit" name="feedback" value="incorrect">👎 Incorrect</button>
+            <input type="hidden" name="message" value="{{ message|e }}">
+            <input type="hidden" name="label" value="{{ label }}">
+            <input type="hidden" name="model_version" value="{{ model_version }}">
+            <input type="hidden" name="backend" value="{{ backend }}">
+            <input type="hidden" name="lang" value="{{ lang }}">
+            <button type="submit" name="feedback" value="correct">👍 Correct</button>
+            <button type="submit" name="feedback" value="incorrect">👎 Incorrect</button>
         </form>
-
     {% endif %}
 </body>
 </html>

@@ -38,6 +38,8 @@
             <th>Predicted Label</th>
             <th>User Feedback</th>
             <th>Model Version</th>
+            <th>Lang</th>
+            <th>Backend</th>
         </tr>
         {% for row in logs %}
         <tr>
@@ -45,6 +47,8 @@
             <td>{{ row.label }}</td>
             <td>{{ row.feedback }}</td>
             <td>{{ row.model_version }}</td>
+            <td>{{ row.lang if row.lang else "unknown" }}</td>
+            <td>{{ row.backend if row.backend else "sklearn" }}</td>
         </tr>
         {% endfor %}
     </table>
