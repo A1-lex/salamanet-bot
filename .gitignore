@@ -23,11 +23,3 @@ models/
 *.csv
 *.txt
 
-__pycache__/
-*.pyc
-*.joblib
-*.bak
-models/
-*.csv
-*.txt
-
